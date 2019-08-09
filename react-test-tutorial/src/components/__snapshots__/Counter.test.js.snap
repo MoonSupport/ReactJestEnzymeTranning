@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter 테스트 더하기 기능 1`] = `
+<div>
+  <h1>
+    카운터!
+  </h1>
+  <h2>
+    2
+  </h2>
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    -
+  </button>
+</div>
+`;
+
+exports[`Counter 테스트 빼기 기능 1`] = `
+<div>
+  <h1>
+    카운터!
+  </h1>
+  <h2>
+    1
+  </h2>
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    -
+  </button>
+</div>
+`;
+
+exports[`Counter 테스트 스냅샷과 비교 1`] = `
+<div>
+  <h1>
+    카운터!
+  </h1>
+  <h2>
+    1
+  </h2>
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    -
+  </button>
+</div>
+`;
