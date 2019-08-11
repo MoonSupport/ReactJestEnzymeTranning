@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "dependencies": {
     "next": "latest",
+    "next-redux-wrapper": "^3.0.0-alpha.3",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
     "babel-jest": "24.1.0",
-    "enzyme": "3.4.3",
-    "enzyme-adapter-react-16": "1.2.0",
-    "jest": "24.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "jest-enzyme": "^7.1.0",
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.4.2"
   },
