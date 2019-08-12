@@ -1,8 +1,8 @@
 import React from "react"
 import { shallow } from "enzyme"
 import Headline from "./index"
-
-import { findByTestAtrribute } from "../../test_utils/index"
+import checkPropTypes from "check-prop-types"
+import { findByTestAtrribute, checkProps } from "../../test_utils/index"
 
 const setUp = (props = {}) => {
   const component = shallow(<Headline {...props} />)
@@ -46,6 +46,25 @@ describe("헤드라인 컴포넌트", () => {
     it("컴포넌트 렌더링에 실패합니다.", () => {
       const component = findByTestAtrribute(wrapper, "HeadlineComponent")
       expect(component.length).toBe(0)
+    })
+  })
+
+  describe("PropTypes 체크", () => {
+    it("에러 없음", () => {
+      const expectedProps = {
+        header: "Test Header",
+        description: "Test Description",
+        user: [
+          {
+            fName: "Test fName",
+            lName: "Test lName",
+            age: 24,
+            onlineStatus: false
+          }
+        ]
+      }
+      const propsErr = checkProps(Headline, expectedProps)
+      expect(propsErr).toBeUndefined()
     })
   })
 })

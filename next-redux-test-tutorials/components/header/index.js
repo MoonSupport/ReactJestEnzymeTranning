@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 const Header = props => {
   return (
     <header data-test="headerComponent">
