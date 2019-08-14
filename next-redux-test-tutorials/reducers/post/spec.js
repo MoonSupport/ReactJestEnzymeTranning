@@ -1,0 +1,46 @@
+import postReducer, { GET_POSTS_SUCCESS } from "./reducer";
+import { addPostAPI } from "../../sagas/post";
+
+describe("Posts Reducer", () => {
+  it("default state가 리턴된다.", () => {
+    const newState = postReducer(undefined, {});
+    expect(newState).toEqual({
+      posts: []
+    });
+  });
+
+  it("요청 결과 값을 정확히 받는다..", async () => {
+    const expectedDummy = {
+      posts: [
+        {
+          userId: 1,
+          id: 1,
+          title:
+            "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+          body:
+            "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: "qui est esse",
+          body:
+            "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+          body:
+            "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+        }
+      ]
+    };
+    const requestData = await addPostAPI();
+    const newState = postReducer(undefined, {
+      type: GET_POSTS_SUCCESS,
+      payload: requestData
+    });
+    expect(newState).toEqual(expectedDummy);
+  });
+});

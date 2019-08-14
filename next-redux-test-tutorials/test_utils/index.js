@@ -1,11 +1,16 @@
-import checkPropTypes from "check-prop-types"
-
-export const findByTestAtrribute = (component, attr) => {
-  const wrapper = component.find(`[data-test="${attr}"]`)
-  return wrapper
-}
+import checkPropTypes from "check-prop-types";
 
 export const checkProps = (component, expectedProps) => {
-  const propsErr = checkPropTypes(component.propTypes, expectedProps, "props", component.name)
-  return propsErr
-}
+  const propsErr = checkPropTypes(
+    component.propTypes,
+    expectedProps,
+    "props",
+    component.name
+  );
+  return propsErr;
+};
+
+export const findByTestAtrribute = (component, attr) => {
+  const wrapper = component.find(`[data-test="${attr}"]`);
+  return wrapper;
+};
